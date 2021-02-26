@@ -66,6 +66,22 @@ small,
   color: $white;
   background-color: $black;
 }
+
+@mixin nav-bar-setting {
+  height: 6vh;
+  background-color: $black;
+  li {
+    display: inline-block;
+    padding-left: 2rem;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+/* Variables */
+
 $black: #000000;
 $darkred: #50191a;
 $white: #ffffff;
@@ -88,17 +104,9 @@ $grey: #e5e5e5;
 }
 
 nav {
-  height: 6vh;
-  background-color: $black;
-  li {
-    display: inline-block;
-    a {
-      padding: 0 2rem;
-      font-size: 1.5rem;
-      color: $white;
-      text-decoration: none;
-    }
-  }
+  @include nav-bar-setting;
+  font-size: 1.5rem;
+  padding: 0 1em;
 }
 
 main {
@@ -178,5 +186,27 @@ a {
 }
 
 footer {
-  background-color: black;
+  background-color: $black;
+  height: 26vh;
+  .nav_plus_logo {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    nav {
+      @include nav-bar-setting;
+      font-size: 1.3rem;
+      padding: 1.2rem;
+    }
+    img {
+      height: 8vmin;
+    }
+  }
+}
+
+.credits {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 1.3rem;
+  color: $white;
 }
