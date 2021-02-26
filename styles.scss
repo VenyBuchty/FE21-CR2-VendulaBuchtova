@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Font Setting */
+html {
+  font-size: 100%;
+}
+
+body {
+  background: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #000000;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+
+/* SASS usage */
+@mixin p-setting {
+  font-size: 1.2em;
+  display: flex;
+  text-align: center;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2vmin 0;
+  color: $white;
+  background-color: $black;
+}
+$black: #000000;
+$darkred: #50191a;
+$white: #ffffff;
+$grey: #e5e5e5;
+
+/* Header */
+
+.hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vmin;
+  background-color: $darkred;
+  .logo_np {
+    height: 8vmin;
+  }
+  .logo_wd {
+    height: 12vmin;
+  }
+}
+
+nav {
+  height: 6vh;
+  background-color: $black;
+  li {
+    display: inline-block;
+    a {
+      padding: 0 2rem;
+      font-size: 1.5rem;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+main {
+  margin: 0 10vmin;
+  .date {
+    margin: 4vmin 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .blog_posts {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 4vmin auto;
+    h3 {
+      margin: 2vmin 0;
+      display: flex;
+      align-items: center;
+      padding: 0 2vmin;
+      height: 8vmin;
+      background-color: $grey;
+    }
+    .thumbnails_container {
+      margin: 2vmin 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  .thumbnail {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    img {
+      height: 30vmin;
+      max-width: 40vmin;
+      object-fit: cover;
+    }
+
+    p {
+      @include p-setting;
+      max-width: 40vmin;
+      height: 8vmin;
+    }
+  }
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  height: 14vmin;
+}
+
+.below_posts_container {
+  margin: 4vmin 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .thumbnail_below {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    img {
+      height: 45vmin;
+      max-width: 50vmin;
+      object-fit: cover;
+    }
+
+    p {
+      @include p-setting;
+      max-width: 50vmin;
+      height: 10vmin;
+    }
+  }
+}
+
+footer {
+  background-color: black;
+}
