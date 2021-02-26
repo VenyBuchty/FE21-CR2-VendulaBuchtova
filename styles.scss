@@ -135,24 +135,42 @@ main {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      a {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-decoration: none;
+        height: 100%;
+        img {
+          height: 30vmin;
+          max-width: 40vmin;
+          object-fit: cover;
+        }
+
+        p {
+          @include p-setting;
+          max-width: 40vmin;
+          height: 8vmin;
+        }
+      }
     }
   }
+}
 
-  .thumbnail {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    img {
-      height: 30vmin;
-      max-width: 40vmin;
-      object-fit: cover;
-    }
+.thumbnail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  img {
+    height: 30vmin;
+    max-width: 40vmin;
+    object-fit: cover;
+  }
 
-    p {
-      @include p-setting;
-      max-width: 40vmin;
-      height: 8vmin;
-    }
+  p {
+    @include p-setting;
+    max-width: 40vmin;
+    height: 8vmin;
   }
 }
 
