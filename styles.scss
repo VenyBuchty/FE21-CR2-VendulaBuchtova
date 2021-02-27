@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   line-height: 1.75;
   color: #000000;
-  max-width: 1400px;
+  max-width: 1450px;
   margin: 0 auto;
 }
 
@@ -57,12 +57,12 @@ small,
 
 /* SASS usage */
 @mixin p-setting {
-  font-size: 1.2em;
+  font-size: 0.8em;
   display: flex;
   text-align: center;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
   color: $white;
   background-color: $black;
 }
@@ -72,7 +72,7 @@ small,
   background-color: $black;
   li {
     display: inline-block;
-    padding-left: 2rem;
+    padding-left: 1.7rem;
     a {
       color: $white;
       text-decoration: none;
@@ -84,10 +84,11 @@ small,
 
 $black: #000000;
 $darkred: #50191a;
+$lighterred: #883b3e;
 $white: #ffffff;
 $grey: #e5e5e5;
 
-/* Header */
+/* ------------------------------------------Header */
 
 .hero {
   display: flex;
@@ -100,7 +101,7 @@ $grey: #e5e5e5;
     width: 200px;
   }
   .logo_wd {
-    width: 45vh;
+    width: 60vh;
   }
 }
 
@@ -110,6 +111,7 @@ nav {
   padding: 0 1em;
 }
 
+/* ---------Main Content HOME.html */
 main {
   .date {
     margin: 4vh;
@@ -136,10 +138,10 @@ main {
       background-color: $grey;
     }
     .thumbnails_container {
-      margin: 2vh 0;
+      margin: 10px 0;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
       a {
         display: flex;
         flex-wrap: wrap;
@@ -147,7 +149,7 @@ main {
         text-decoration: none;
         height: 100%;
         img {
-          height: 30vh;
+          height: 250px;
           max-width: 40vh;
           object-fit: cover;
         }
@@ -155,7 +157,7 @@ main {
         p {
           @include p-setting;
           max-width: 40vh;
-          height: 8vh;
+          height: 70px;
         }
       }
     }
@@ -168,7 +170,7 @@ main {
   flex-direction: column;
   height: 100%;
   img {
-    height: 30vh;
+    height: 250px;
     max-width: 40vh;
     object-fit: cover;
   }
@@ -176,7 +178,7 @@ main {
   p {
     @include p-setting;
     max-width: 40vh;
-    height: 8vh;
+    height: 70px;
   }
 }
 
@@ -202,6 +204,94 @@ main {
     }
   }
 }
+/* ---------Main Content TECH.html */
+
+.button_set {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  button {
+    color: $white;
+    background-color: $darkred;
+    text-align: center;
+    height: 3rem;
+    width: 10rem;
+    border-radius: 20px;
+    border: 1px solid $black;
+    &:hover {
+      font-size: 1rem;
+      color: $grey;
+      background-color: $lighterred;
+    }
+  }
+}
+
+/* ---------Main Content VIDEO.html */
+
+.videos_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .video {
+    iframe {
+      padding-bottom: 3rem;
+    }
+    p {
+      font-size: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      background-color: $black;
+      width: 560px;
+      height: 50px;
+    }
+  }
+}
+
+/* ---------Main Content ARTICLE.html */
+.article_container {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid $black;
+  img {
+    height: 350px;
+    width: 900px;
+    object-fit: cover;
+  }
+
+  h4 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background-color: $black;
+    width: 900px;
+    height: 40px;
+  }
+
+  p {
+    font-size: 0.8em;
+    padding: 10px;
+    text-align: left;
+    color: $black;
+    background-color: $white;
+    width: 880px;
+    height: 400px;
+  }
+}
+/* Footer */
 
 footer {
   background-color: $black;
@@ -209,7 +299,7 @@ footer {
   .nav_plus_logo {
     display: flex;
     justify-content: space-between;
-    padding: 1vh 3vh;
+    padding: 2vh 6vh;
     nav {
       @include nav-bar-setting;
       font-size: 1.3rem;
@@ -232,10 +322,119 @@ footer {
 
 /* ---------------Media Query Setting--------------------- */
 
-/* @media (min-width: 481px) and (max-width: 910px) {
-  
+/* MQ Tablet Setting------------ */
+@media (min-width: 481px) and (max-width: 910px) {
+  nav {
+    font-size: 1rem;
+    li {
+      padding-top: 0.5rem;
+    }
+  }
+
+  main {
+    .date {
+      display: none;
+    }
+
+    .blog_posts {
+      h3 {
+        font-size: 1.4rem;
+        justify-content: center;
+      }
+    }
+
+    .howTo_banner {
+      display: none;
+    }
+  }
+  .thumbnail {
+    p {
+      @include p-setting;
+      padding: 5%;
+    }
+  }
+
+  .below_posts_container {
+    .thumbnail_below {
+      margin: 4vh 0;
+      img {
+        height: 30vh;
+        max-width: 40vh;
+      }
+
+      p {
+        padding: 5%;
+        max-width: 40vh;
+        height: 8vh;
+      }
+    }
+  }
+  footer {
+    height: 35vh;
+    .nav_plus_logo {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      padding: 4vh 3vh 2vh 3vh;
+      nav {
+        @include nav-bar-setting;
+        font-size: 0.9rem;
+        padding-top: 4vh;
+      }
+      img {
+        width: 230px;
+        height: 50px;
+      }
+    }
+  }
+
+  .credits {
+    font-size: 0.7rem;
+  }
+
+  .videos_container {
+    .video {
+      iframe {
+        width: 400px;
+        height: 200px;
+      }
+      p {
+        width: 400px;
+        height: 50px;
+      }
+    }
+  }
+
+  .article_container {
+    .article {
+      border: 1px solid $black;
+      img {
+        height: 200px;
+        width: 481px;
+      }
+
+      h4 {
+        font-size: 1rem;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        background-color: $black;
+        width: 481px;
+        height: 50px;
+      }
+
+      p {
+        width: 481px;
+        height: 700px;
+      }
+    }
+  }
 }
- */
+/* MQ Mobile Setting------------ */
+
 @media (max-width: 480px) {
   .hero {
     .logo_wd {
@@ -263,40 +462,10 @@ footer {
         font-size: 1.4rem;
         justify-content: center;
       }
-      .thumbnails_container {
-        a {
-          p {
-            font-size: 0.8rem;
-          }
-        }
-      }
     }
 
     .howTo_banner {
       display: none;
-    }
-
-    .thumbnail {
-      p {
-        @include p-setting;
-        font-size: 0.8rem;
-      }
-    }
-
-    .below_posts_container {
-      .thumbnail_below {
-        margin: 4vh 0;
-        img {
-          height: 30vh;
-          max-width: 40vh;
-        }
-
-        p {
-          font-size: 0.8rem;
-          max-width: 40vh;
-          height: 8vh;
-        }
-      }
     }
   }
 
@@ -322,5 +491,45 @@ footer {
 
   .credits {
     font-size: 0.7rem;
+  }
+
+  .videos_container {
+    .video {
+      iframe {
+        width: 400px;
+        height: 200px;
+      }
+      p {
+        width: 400px;
+        height: 50px;
+      }
+    }
+  }
+
+  .article_container {
+    .article {
+      border: 1px solid $black;
+      img {
+        height: 200px;
+        width: 460px;
+      }
+
+      h4 {
+        font-size: 1rem;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        background-color: $black;
+        width: 460px;
+        height: 50px;
+      }
+
+      p {
+        width: 460px;
+        height: 700px;
+      }
+    }
   }
 }
