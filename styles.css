@@ -61,21 +61,23 @@ small,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 20vmin;
+  height: 20vh;
   background-color: #50191a;
 }
 
 .hero .logo_np {
-  height: 8vmin;
+  width: 200px;
 }
 
 .hero .logo_wd {
-  height: 12vmin;
+  width: 45vh;
 }
 
 nav {
@@ -95,18 +97,23 @@ nav li a {
   text-decoration: none;
 }
 
-main {
-  margin: 0 10vmin;
-}
-
 main .date {
-  margin: 4vmin 0;
+  margin: 4vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+main .howTo_banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main .blog_posts {
@@ -118,32 +125,31 @@ main .blog_posts {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 90%;
-  margin: 4vmin auto;
+  margin: 4vh auto;
 }
 
 main .blog_posts h3 {
-  margin: 2vmin 0;
+  margin: 2vh 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 2vmin;
-  height: 8vmin;
+  padding: 0 2vh;
+  height: 8vh;
   background-color: #e5e5e5;
 }
 
 main .blog_posts .thumbnails_container {
-  margin: 2vmin 0;
+  margin: 2vh 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 main .blog_posts .thumbnails_container a {
@@ -160,8 +166,8 @@ main .blog_posts .thumbnails_container a {
 }
 
 main .blog_posts .thumbnails_container a img {
-  height: 30vmin;
-  max-width: 40vmin;
+  height: 30vh;
+  max-width: 40vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -178,14 +184,15 @@ main .blog_posts .thumbnails_container a p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2vmin 0;
+  padding-top: 1rem;
   color: #ffffff;
   background-color: #000000;
-  max-width: 40vmin;
-  height: 8vmin;
+  max-width: 40vh;
+  height: 8vh;
 }
 
 .thumbnail {
+  margin: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,8 +204,8 @@ main .blog_posts .thumbnails_container a p {
 }
 
 .thumbnail img {
-  height: 30vmin;
-  max-width: 40vmin;
+  height: 30vh;
+  max-width: 40vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -215,25 +222,15 @@ main .blog_posts .thumbnails_container a p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2vmin 0;
+  padding-top: 1rem;
   color: #ffffff;
   background-color: #000000;
-  max-width: 40vmin;
-  height: 8vmin;
-}
-
-a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 14vmin;
+  max-width: 40vh;
+  height: 8vh;
 }
 
 .below_posts_container {
-  margin: 4vmin 0;
+  margin: 4vh 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -255,8 +252,8 @@ a {
 }
 
 .below_posts_container .thumbnail_below img {
-  height: 45vmin;
-  max-width: 50vmin;
+  height: 45vh;
+  max-width: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -273,11 +270,11 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2vmin 0;
+  padding-top: 1rem;
   color: #ffffff;
   background-color: #000000;
-  max-width: 50vmin;
-  height: 10vmin;
+  max-width: 50vh;
+  height: 10vh;
 }
 
 footer {
@@ -292,7 +289,7 @@ footer .nav_plus_logo {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 3rem;
+  padding: 1vh 3vh;
 }
 
 footer .nav_plus_logo nav {
@@ -313,7 +310,8 @@ footer .nav_plus_logo nav li a {
 }
 
 footer .nav_plus_logo img {
-  height: 8vmin;
+  width: 300px;
+  height: 60px;
 }
 
 .credits {
@@ -327,5 +325,109 @@ footer .nav_plus_logo img {
       align-content: center;
   font-size: 1.3rem;
   color: #ffffff;
+}
+
+/* ---------------Media Query Setting--------------------- */
+/* @media (min-width: 481px) and (max-width: 910px) {
+  
+}
+ */
+@media (max-width: 480px) {
+  .hero .logo_wd {
+    display: none;
+  }
+  .hero .logo_np {
+    width: 300px;
+  }
+  nav {
+    font-size: 1rem;
+  }
+  nav li {
+    padding-top: 0.5rem;
+  }
+  main .date {
+    display: none;
+  }
+  main .blog_posts h3 {
+    font-size: 1.4rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .blog_posts .thumbnails_container a p {
+    font-size: 0.8rem;
+  }
+  main .howTo_banner {
+    display: none;
+  }
+  main .thumbnail p {
+    font-size: 1.2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 1rem;
+    color: #ffffff;
+    background-color: #000000;
+    font-size: 0.8rem;
+  }
+  main .below_posts_container .thumbnail_below {
+    margin: 4vh 0;
+  }
+  main .below_posts_container .thumbnail_below img {
+    height: 30vh;
+    max-width: 40vh;
+  }
+  main .below_posts_container .thumbnail_below p {
+    font-size: 0.8rem;
+    max-width: 40vh;
+    height: 8vh;
+  }
+  footer {
+    height: 35vh;
+  }
+  footer .nav_plus_logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 4vh 3vh 2vh 3vh;
+  }
+  footer .nav_plus_logo nav {
+    height: 6vh;
+    background-color: #000000;
+    font-size: 0.9rem;
+    padding-top: 4vh;
+  }
+  footer .nav_plus_logo nav li {
+    display: inline-block;
+    padding-left: 2rem;
+  }
+  footer .nav_plus_logo nav li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  footer .nav_plus_logo img {
+    width: 230px;
+    height: 50px;
+  }
+  .credits {
+    font-size: 0.7rem;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

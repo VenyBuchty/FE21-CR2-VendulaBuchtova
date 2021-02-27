@@ -62,7 +62,7 @@ small,
   text-align: center;
   align-items: flex-start;
   justify-content: center;
-  padding: 2vmin 0;
+  padding-top: 1rem;
   color: $white;
   background-color: $black;
 }
@@ -91,15 +91,16 @@ $grey: #e5e5e5;
 
 .hero {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  height: 20vmin;
+  height: 20vh;
   background-color: $darkred;
   .logo_np {
-    height: 8vmin;
+    width: 200px;
   }
   .logo_wd {
-    height: 12vmin;
+    width: 45vh;
   }
 }
 
@@ -110,31 +111,35 @@ nav {
 }
 
 main {
-  margin: 0 10vmin;
   .date {
-    margin: 4vmin 0;
+    margin: 4vh;
     display: flex;
     justify-content: flex-end;
+  }
+
+  .howTo_banner {
+    display: flex;
+    justify-content: center;
   }
 
   .blog_posts {
     display: flex;
     flex-direction: column;
     width: 90%;
-    margin: 4vmin auto;
+    margin: 4vh auto;
     h3 {
-      margin: 2vmin 0;
+      margin: 2vh 0;
       display: flex;
       align-items: center;
-      padding: 0 2vmin;
-      height: 8vmin;
+      padding: 0 2vh;
+      height: 8vh;
       background-color: $grey;
     }
     .thumbnails_container {
-      margin: 2vmin 0;
+      margin: 2vh 0;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
       a {
         display: flex;
         flex-wrap: wrap;
@@ -142,15 +147,15 @@ main {
         text-decoration: none;
         height: 100%;
         img {
-          height: 30vmin;
-          max-width: 40vmin;
+          height: 30vh;
+          max-width: 40vh;
           object-fit: cover;
         }
 
         p {
           @include p-setting;
-          max-width: 40vmin;
-          height: 8vmin;
+          max-width: 40vh;
+          height: 8vh;
         }
       }
     }
@@ -158,30 +163,25 @@ main {
 }
 
 .thumbnail {
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   height: 100%;
   img {
-    height: 30vmin;
-    max-width: 40vmin;
+    height: 30vh;
+    max-width: 40vh;
     object-fit: cover;
   }
 
   p {
     @include p-setting;
-    max-width: 40vmin;
-    height: 8vmin;
+    max-width: 40vh;
+    height: 8vh;
   }
 }
 
-a {
-  display: flex;
-  justify-content: center;
-  height: 14vmin;
-}
-
 .below_posts_container {
-  margin: 4vmin 0;
+  margin: 4vh 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -190,15 +190,15 @@ a {
     flex-direction: column;
     height: 100%;
     img {
-      height: 45vmin;
-      max-width: 50vmin;
+      height: 45vh;
+      max-width: 50vh;
       object-fit: cover;
     }
 
     p {
       @include p-setting;
-      max-width: 50vmin;
-      height: 10vmin;
+      max-width: 50vh;
+      height: 10vh;
     }
   }
 }
@@ -209,14 +209,15 @@ footer {
   .nav_plus_logo {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 3rem;
+    padding: 1vh 3vh;
     nav {
       @include nav-bar-setting;
       font-size: 1.3rem;
       padding: 1.2rem;
     }
     img {
-      height: 8vmin;
+      width: 300px;
+      height: 60px;
     }
   }
 }
@@ -227,4 +228,99 @@ footer {
   align-content: center;
   font-size: 1.3rem;
   color: $white;
+}
+
+/* ---------------Media Query Setting--------------------- */
+
+/* @media (min-width: 481px) and (max-width: 910px) {
+  
+}
+ */
+@media (max-width: 480px) {
+  .hero {
+    .logo_wd {
+      display: none;
+    }
+    .logo_np {
+      width: 300px;
+    }
+  }
+
+  nav {
+    font-size: 1rem;
+    li {
+      padding-top: 0.5rem;
+    }
+  }
+
+  main {
+    .date {
+      display: none;
+    }
+
+    .blog_posts {
+      h3 {
+        font-size: 1.4rem;
+        justify-content: center;
+      }
+      .thumbnails_container {
+        a {
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .howTo_banner {
+      display: none;
+    }
+
+    .thumbnail {
+      p {
+        @include p-setting;
+        font-size: 0.8rem;
+      }
+    }
+
+    .below_posts_container {
+      .thumbnail_below {
+        margin: 4vh 0;
+        img {
+          height: 30vh;
+          max-width: 40vh;
+        }
+
+        p {
+          font-size: 0.8rem;
+          max-width: 40vh;
+          height: 8vh;
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 35vh;
+    .nav_plus_logo {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      padding: 4vh 3vh 2vh 3vh;
+      nav {
+        @include nav-bar-setting;
+        font-size: 0.9rem;
+        padding-top: 4vh;
+      }
+      img {
+        width: 230px;
+        height: 50px;
+      }
+    }
+  }
+
+  .credits {
+    font-size: 0.7rem;
+  }
 }
